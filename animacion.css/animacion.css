@@ -1,0 +1,71 @@
+body{
+    background-color: black;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+.sol{
+    background-color: yellow;
+    position: absolute;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
+    top: 10em;
+    left: 15em;
+}
+.tierra, .luna{
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+.tierra{
+    animation: orbita 30s linear infinite;
+    top: 1em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+}
+.luna{
+    animation: orbita 3s linear infinite;
+    top:0;
+    right: 0;
+    height: 8em;
+    width: 8em;
+}
+.tierra::before, .luna::before{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+.tierra::before{
+    background-color: aqua;
+    width: 3em;
+    height: 3em;
+    top: 2.8em;
+    right: 2.8em;
+}
+.luna::before{
+    background-color: silver;
+    height: 1.2em;
+    width: 1.2em;
+    top: 0.8em;
+    right: 0;
+}
+
+@keyframes orbita{
+    to{
+        transform: rotate(360deg);
+
+    }
+}
